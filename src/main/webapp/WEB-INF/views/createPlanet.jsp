@@ -64,8 +64,6 @@
 
     <form action="/createPlanet" method="post">
 
-        <label>Planet ID</label>
-        <input type="number" name="planetId" required>
 
         <label>Planet Name</label>
         <input type="text" name="planetName" required>

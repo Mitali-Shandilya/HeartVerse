@@ -9,9 +9,6 @@
 
 <form action="/register" method="post">
 
-    <label>ID:</label>
-    <input type="number" name="id"><br><br>
-
     <label>Name:</label>
     <input type="text" name="name"><br><br>
 

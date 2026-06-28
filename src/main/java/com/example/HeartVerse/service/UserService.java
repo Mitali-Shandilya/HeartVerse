@@ -5,6 +5,8 @@ import com.example.HeartVerse.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service //Contains business logic.
 public class UserService {
 
@@ -18,4 +20,7 @@ public class UserService {
     public User getUserByEmail(String email){
         return userRepository.findByEmail(email);
     }
+
+    public Optional<User> findUserById(Long Id){ return userRepository.findById(Id);}
+
 }

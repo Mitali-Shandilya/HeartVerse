@@ -25,6 +25,9 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user) {
+        System.out.println("User ID = " + user.getId());
+        System.out.println("Name = " + user.getName());
+        System.out.println("Email = " + user.getEmail());
         userService.saveUser(user);
         return "redirect:/login";
     }
