@@ -30,7 +30,7 @@ public class PlanetController {
     @Autowired
     private UserService userService;
     @PostMapping("/createPlanet")
-    public String createPlanet(@ModelAttribute Planet planet, HttpSession session){
+    public String createPlanet(@ModelAttribute Planet planet, HttpSession session)throws UserNotFoundException{
         Long UserId=(Long)session.getAttribute("userId");
         User user=userService.findUserById(UserId).orElseThrow(()-> new UserNotFoundException("User with id: "+UserId+" not found"));
         planet.setUser(user);
@@ -43,7 +43,7 @@ public class PlanetController {
 
 
     @GetMapping("/dashboard")
-    public String showDashboard(Model model, HttpSession session) {
+    public String showDashboard(Model model, HttpSession session) throws UserNotFoundException{
 
         if (session.getAttribute("userId") == null) {
             return "redirect:/login";

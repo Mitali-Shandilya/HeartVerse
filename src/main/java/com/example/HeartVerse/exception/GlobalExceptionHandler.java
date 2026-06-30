@@ -12,4 +12,10 @@ public class GlobalExceptionHandler {
         model.addAttribute("errorMessage", ex.getMessage());
         return "error";
     }
+
+    @ExceptionHandler(PlanetNotFoundException.class)
+    public String handlePlanetNotFound(PlanetNotFoundException ex,Model model){
+        model.addAttribute("errorMessage",ex.getMessage());
+        return "error";
+    }
 }
